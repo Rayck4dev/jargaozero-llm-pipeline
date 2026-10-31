@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "prompt": "Nível: Intermediário Técnico. Texto: Resource Quota Limit refere-se a quê?",
+    "reference": "Em termos simples, resource quota limit refere-se a: Restrição máxima de consumo de recursos computacionais alocados a um projeto ou equipe. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, resource quota limit refere-se a: Limite máximo de consumo de recursos computacional que um projeto ou equipe pode utilizar dentro de um ambiente de nuvem. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 2,
+    "prompt": "Nível: Leigo. Texto: Poderia explicar o termo técnico 'Bandwidth Throttling'?",
+    "reference": "Em termos simples, bandwidth throttling refere-se a: Limitação intencional da velocidade da banda de internet por um provedor ou sistema. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, bandwidth throttling refere-se a: Limitação intencional da velocidade da banda de internet por um provedor ou sistema. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 3,
+    "prompt": "Nível: Leigo. Texto: Poderia explicar o termo técnico 'Multi-Cloud Strategy'?",
+    "reference": "Em termos simples, multi-cloud strategy refere-se a: Uso combinado de serviços de diferentes provedores de nuvem para evitar dependência e riscos. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, multi-cloud strategy refere-se a: Uso combinado de serviços de computação em nuvem de diferentes provedores. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 4,
+    "prompt": "Nível: Iniciante. Texto: O que significa exatamente 'Salt em Hashing' no desenvolvimento? (Ref. 124)",
+    "reference": "Em termos simples, salt em hashing refere-se a: Adição de dados aleatórios a senhas antes do processo de hash para impedir ataques por dicionário. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, salt em hashing refere-se a: Adição de dados aleatórios a senhas antes do processo de hash para dificultar ataques por dicionário. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 5,
+    "prompt": "Nível: Iniciante. Texto: O que significa exatamente 'Container Registry' no desenvolvimento?",
+    "reference": "Em termos simples, container registry refere-se a: Repositório centralizado para armazenar, gerenciar e distribuir imagens de containers Docker. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, container registry refere-se a: Repositório centralizado onde são armazenados e gerenciados imagens de containers Docker. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 6,
+    "prompt": "Nível: Iniciante. Texto: O que significa exatamente 'Connection Pool' no desenvolvimento? (Ref. 241)",
+    "reference": "Em termos simples, connection pool refere-se a: Conjunto pré-alocado de conexões ativas com o banco de dados para evitar atrasos de abertura. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, connection pool refere-se a: Conjunto pré-alocado de conexões ativas com o banco de dados para evitar atrasos de abertura. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 7,
+    "prompt": "Nível: Leigo. Texto: Poderia explicar o termo técnico 'CDN Edge Server'?",
+    "reference": "Em termos simples, cdn edge server refere-se a: Servidor localizado geograficamente perto do usuário final para acelerar a entrega de conteúdos web. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, cdn edge server refere-se a: Servidor localizado geograficamente perto do usuário final para acelerar a entrega de conteúdos. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 8,
+    "prompt": "Nível: Intermediário Técnico. Texto: Security Audit Trail refere-se a quê? (Ref. 206)",
+    "reference": "Em termos simples, security audit trail refere-se a: Registo cronológico detalhado de eventos e acessos para auditoria forense de segurança. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, security audit trail refere-se a: Registo detalhado de alterações e acessos a sistemas para auditoria e segurança. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 9,
+    "prompt": "Nível: Iniciante. Texto: O que significa exatamente 'Man-in-the-Middle Attack' no desenvolvimento? (Ref. 202)",
+    "reference": "Em termos simples, man-in-the-middle attack refere-se a: Interceptação oculta de dados trocados entre duas partes por um invasor na mesma rede. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, man-in-the-middle attack refere-se a: Falha de segurança onde um invasor intercepta e altera as comunicações entre duas partes. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 10,
+    "prompt": "Nível: Intermediário Técnico. Texto: Circuit Breaker Pattern refere-se a quê? (Ref. 107)",
+    "reference": "Em termos simples, circuit breaker pattern refere-se a: Padrão de resiliência que desativa chamadas a um serviço instável para evitar falhas em cascata. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, circuit breaker pattern refere-se a: Padrão de resiliência que desativa um circuito elétrico quando falha para evitar danos adicionais. No desenvolvimento, refere-se a: Mecanismo que desativa um serviço para evitar falhas em cascata. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 11,
+    "prompt": "Nível: Intermediário Técnico. Texto: Auto-Scaling Group refere-se a quê? (Ref. 137)",
+    "reference": "Em termos simples, auto-scaling group refere-se a: Mecanismo de ajuste automático na quantidade de servidores ativos com base no volume de tráfego. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, auto-scaling group refere-se a: Mecanismo de escala automática de servidores dentro de um cluster para atender a variações de carga. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 12,
+    "prompt": "Nível: Iniciante. Texto: O que significa exatamente 'Latência de Rede' no desenvolvimento? (Ref. 151)",
+    "reference": "Em termos simples, latência de rede refere-se a: Atraso temporal na transmissão de pacotes de dados através de uma rede. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, latência de rede refere-se a: Atraso temporal na transmissão de pacotes de dados através de uma rede. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 13,
+    "prompt": "Nível: Iniciante. Texto: O que significa exatamente 'Port Forwarding' no desenvolvimento? (Ref. 235)",
+    "reference": "Em termos simples, port forwarding refere-se a: Técnica de redirecionamento de portas de rede para permitir acesso externo a serviços internos. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, port forwarding refere-se a: Técnica de redondeia onde um porto de rede de um computador é redirecionado para outro. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 14,
+    "prompt": "Nível: Intermediário Técnico. Texto: JWT Token Signature refere-se a quê?",
+    "reference": "Em termos simples, jwt token signature refere-se a: Assinatura criptográfica que valida a autenticidade e integridade de um token de sessão. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, jwt token signature refere-se a: Assinatura criptográfica que valida a autenticidade e integridade de um token de sessão. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 15,
+    "prompt": "Nível: Iniciante. Texto: O que significa exatamente 'BGP Routing' no desenvolvimento?",
+    "reference": "Em termos simples, bgp routing refere-se a: Protocolo principal que decide a melhor rota global para os pacotes trafegarem na internet. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, bgp routing refere-se a: Protocolo global de rotas dinâmicas para redes de computadores. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 16,
+    "prompt": "Nível: Leigo. Texto: Poderia explicar o termo técnico 'Monolithic Architecture'?",
+    "reference": "Em termos simples, monolithic architecture refere-se a: Estilo de software onde todas as camadas e módulos estão unidos num único bloco executável. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, monolithic architecture refere-se a: Conceito onde o software é estruturado em um único bloco monolítico, sem camadas ou microservices. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 17,
+    "prompt": "Nível: Intermediário Técnico. Texto: Loopback IP refere-se a quê?",
+    "reference": "Em termos simples, loopback ip refere-se a: Endereço virtual local (127.0.0.1) usado por um sistema para comunicar consigo mesmo. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, loopback ip refere-se a: Endereço IP local que serve de alvo para testes e desenvolvimento dentro do próprio servidor. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 18,
+    "prompt": "Nível: Intermediário Técnico. Texto: Cloud Object Storage refere-se a quê? (Ref. 215)",
+    "reference": "Em termos simples, cloud object storage refere-se a: Armazenamento escalável de dados estruturados e não estruturados em formato de objetos planos na nuvem. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, cloud object storage refere-se a: Armazenamento escalável de dados estruturados e não estruturados em formatos como arquivos e pastas. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 19,
+    "prompt": "Nível: Intermediário Técnico. Texto: OWASP Top 10 refere-se a quê? (Ref. 125)",
+    "reference": "Em termos simples, owasp top 10 refere-se a: Lista oficial que cataloga as dez falhas de segurança mais críticas em aplicações web. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, owasp top 10 refere-se a: Lista oficial de dez falhas de segurança mais críticas em aplicações web. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 20,
+    "prompt": "Nível: Leigo. Texto: Poderia explicar o termo técnico 'API Rate Limiting'? (Ref. 114)",
+    "reference": "Em termos simples, api rate limiting refere-se a: Mecanismo de controlo que restringe o número máximo de requisições que um cliente pode fazer. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, api rate limiting refere-se a: Mecanismo de controlo que limita o número máximo de requisições que um cliente pode fazer a uma API por unidade de tempo. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 21,
+    "prompt": "Nível: Leigo. Texto: Poderia explicar o termo técnico 'Orquestração de Containers'? (Ref. 192)",
+    "reference": "Em termos simples, orquestração de containers refere-se a: Gestão automatizada do ciclo de vida, escala e distribuição de múltiplos containers. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, orquestração de containers refere-se a: Gestão dinâmica de múltiplos containers de jargão acadêmico refere-se a: Gerenciamento automatizado de infraestrutura virtual para containers. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 22,
+    "prompt": "Nível: Intermediário Técnico. Texto: Handshake TCP refere-se a quê? (Ref. 230)",
+    "reference": "Em termos simples, handshake tcp refere-se a: Processo inicial de sincronização e estabelecimento de conexão segura entre dois computadores. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, handshake tcp refere-se a: Processo inicial de estabelecimento de conexão segura entre dois computadores. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 23,
+    "prompt": "Nível: Intermediário Técnico. Texto: Ephemeral Storage refere-se a quê? (Ref. 221)",
+    "reference": "Em termos simples, ephemeral storage refere-se a: Espaço de armazenamento temporário que é apagado assim que a instância de servidor é desligada. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, ephemeral storage refere-se a: Espaço de armazenamento temporário que é apagado assim que a instância de servidor é desligada. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 24,
+    "prompt": "Nível: Leigo. Texto: Poderia explicar o termo técnico 'Subnet Mask'?",
+    "reference": "Em termos simples, subnet mask refere-se a: Número que divide uma rede IP em subredes menores para organização e segurança. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, subnet mask refere-se a: Número que define a divisão lógica de uma rede IP em subredes menores. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  },
+  {
+    "id": 25,
+    "prompt": "Nível: Leigo. Texto: Poderia explicar o termo técnico 'Orquestração de Containers'? (Ref. 117)",
+    "reference": "Em termos simples, orquestração de containers refere-se a: Gestão automatizada do ciclo de vida, escala e distribuição de múltiplos containers. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional.",
+    "model_output": "Em termos simples, orquestração de containers refere-se a: Gestão dinâmica de múltiplos containers de jargão acadêmico refere-se a: Gerenciamento automatizado de infraestrutura virtualizada por containers. É um conceito fundamental na engenharia de sistemas para garantir eficiência e estabilidade operacional."
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "project_name": "JargãoZero",
+  "base_model": "unsloth/llama-3-8b-Instruct-bnb-4bit",
+  "fine_tuning_method": "QLoRA (PEFT)",
+  "lora_parameters": {
+    "r": 16,
+    "lora_alpha": 16,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  },
+  "training_metrics": {
+    "initial_loss": 3.2889,
+    "final_loss": 0.1579,
+    "epochs": 3,
+    "total_steps": 60
+  },
+  "evaluation_metrics": {
+    "total_test_samples": 25,
+    "semantic_accuracy_percentage": 100.0,
+    "exact_match_percentage": 20.0
+  },
+  "dataset_split": {
+    "train_samples": 200,
+    "validation_samples": 25,
+    "test_samples": 25
+  }
+}

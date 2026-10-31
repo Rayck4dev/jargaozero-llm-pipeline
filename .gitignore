@@ -1,0 +1,22 @@
+# Python & Ambientes
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+venv/
+.venv/
+
+# Arquivos pesados ou locais
+models/*.gguf
+models/*.ggml
+models/*.safetensors
+models/*.pt
+models/*.pth
+models/*.bin
+results_jargaozero.jsonl
+training_dataset.jsonl
+
+# IDE
+.vscode/
+.DS_Store
