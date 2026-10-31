@@ -15,12 +15,27 @@
   },
   "evaluation_metrics": {
     "total_test_samples": 25,
-    "semantic_accuracy_percentage": 100.0,
-    "exact_match_percentage": 20.0
+    "evaluation_source": "data/evaluation_results.json",
+    "exact_match_accuracy_percentage": 20.0,
+    "tfidf_cosine_lexical_similarity_percentage": 74.34,
+    "token_overlap": {
+      "macro_precision_percentage": 85.82,
+      "macro_recall_percentage": 87.71,
+      "macro_f1_percentage": 86.57,
+      "micro_f1_percentage": 86.38
+    },
+    "estimated_portuguese_flesch": {
+      "reference_mean": 28.0,
+      "generated_mean": 26.92,
+      "mean_delta": -1.08,
+      "method": "Heuristic syllable count; readability estimate only."
+    },
+    "semantic_accuracy_status": "Not measured. The previous word-overlap heuristic was not a semantic metric and has been removed."
   },
   "dataset_split": {
     "train_samples": 200,
     "validation_samples": 25,
-    "test_samples": 25
+    "test_samples": 25,
+    "status": "Legacy record-level split with concept overlap; not a leakage-free benchmark."
   }
 }

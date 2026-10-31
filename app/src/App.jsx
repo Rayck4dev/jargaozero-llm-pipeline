@@ -49,7 +49,7 @@ const levels = [
     description: 'Para qualquer pessoa',
   },
   {
-    value: 'Intermediário',
+    value: 'Estudante',
     title: 'Com contexto',
     description: 'Para quem está aprendendo',
   },

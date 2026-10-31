@@ -46,7 +46,9 @@ O **JargãoZero** facilita o entendimento de termos de arquitetura de software, 
 ├── data/
 │   ├── train.jsonl             # Dados de treino
 │   ├── validation.jsonl        # Dados de validação
-│   └── test.jsonl              # Dados de avaliação
+│   ├── test.jsonl              # Dados de avaliação
+│   ├── candidates/             # Dados locais gerados, aguardando revisão
+│   └── rebuilt/                # Divisões revisadas e separadas por conceito
 ├── docs/                       # Relatórios e documentação do projeto
 ├── models/                     # Arquivos de configuração de modelos
 ├── notebook/                   # Notebooks Jupyter
@@ -107,7 +109,15 @@ npm run build
 Recomenda-se Python 3.10 ou superior. Para instalar as dependências do projeto:
 
 ```bash
-python -m pip install -r requirements.txt
+python -m pip install requests
+```
+
+As ferramentas locais de API e datasets precisam apenas de `requests`. O arquivo `requirements.txt` inclui dependências de ajuste fino por GPU e pode não ser instalável no Windows; use um ambiente GPU compatível para as dependências do notebook/treinamento.
+
+Execute os testes do fluxo de datasets na raiz do repositório:
+
+```bash
+python -m unittest discover -s tests -v
 ```
 
 Para verificar a conexão com a API local de chat completions:
@@ -123,7 +133,49 @@ cd data
 python ../scripts/batch_process.py
 ```
 
-Atualmente, o processador Python usa o identificador de modelo definido em `scripts/batch_process.py`. Altere-o se o servidor local exigir outro identificador.
+O processador em lote e o teste da API descobrem o primeiro modelo retornado por `/v1/models`. Para fixar um modelo, defina `JARGAOZERO_LLM_MODEL`; para alterar a URL do servidor, defina `JARGAOZERO_API_BASE_URL` (o valor deve terminar em `/v1`).
+
+### Reconstruir e avaliar um dataset localmente
+
+Os datasets e as divisões existentes são preservados. O fluxo de reconstrução grava novos arquivos em `data/candidates/` e `data/rebuilt/`.
+
+1. Instale `requests` como descrito acima e inicie o servidor do LM Studio na porta `1235`, com um modelo carregado.
+2. Gere candidatos retomáveis a partir das definições de termos já existentes no projeto:
+
+   ```bash
+   python scripts/rebuild_dataset.py --generate
+   ```
+
+   São criadas três explicações por conceito (`Leigo`, `Estudante` e `Técnico`). A execução padrão usa 66 conceitos (198 pares de entrada/saída). Para alterar a URL da API, defina `JARGAOZERO_API_BASE_URL`; também é possível fixar o ID do modelo com `--model`. Modelos locais lentos podem usar um tempo limite maior por conceito com `--request-timeout 1800`.
+3. Revise e edite manualmente `data/candidates/rebuilt_dataset.jsonl`, verificando precisão factual, clareza e diferenças reais entre os níveis. As verificações automáticas do gerador não substituem a revisão humana.
+4. Após a revisão, crie divisões determinísticas de treino/validação/teste, mantendo cada conceito em uma única divisão:
+
+   ```bash
+   python scripts/rebuild_dataset.py --split-reviewed --confirm-reviewed
+   ```
+
+   O comando não substitui arquivos existentes, a menos que `--overwrite` seja informado.
+5. Valide cada arquivo JSONL gerado:
+
+   ```bash
+   python scripts/validate_dataset.py data/rebuilt/train.jsonl
+   python scripts/validate_dataset.py data/rebuilt/validation.jsonl
+   python scripts/validate_dataset.py data/rebuilt/test.jsonl
+   ```
+
+Os arquivos existentes `data/train.jsonl`, `data/validation.jsonl`, `data/test.jsonl` e `training_dataset.jsonl` são dados legados; a divisão aleatória anterior por registro não evita vazamento de conceitos. Não apresente resultados desses arquivos como uma avaliação limpa em dados reservados.
+
+Para avaliar os resultados já existentes com as métricas corrigidas:
+
+```bash
+python scripts/evaluate_metrics.py --results data/evaluation_results.json --output data/rebuilt/metrics.json
+```
+
+O avaliador calcula correspondência exata normalizada, F1 de sobreposição de tokens, similaridade cosseno TF-IDF **lexical** e uma estimativa heurística de Flesch para português. Essas métricas automáticas lexicais/de legibilidade não comprovam correção semântica; use revisão humana para conclusões de qualidade. O argumento opcional `--baseline caminho/para/baseline.json` compara um modelo base somente se ambos os arquivos tiverem os mesmos prompts (ou IDs) e referências.
+
+As métricas corrigidas das 25 saídas existentes estão em [`docs/metrics_summary.json`](./docs/metrics_summary.json). Elas não formam um benchmark limpo de generalização, pois a divisão legada por registro contém conceitos sobrepostos.
+
+A geração do dataset e a inferência podem ser feitas localmente pelo LM Studio. O ajuste fino QLoRA ainda requer um ambiente com GPU compatível. O ambiente Python deste workspace não possui PyTorch instalado nem o comando `nvidia-smi` detectado; portanto, o ajuste fino não pode ser executado aqui no momento.
 
 ## Relatório técnico
 

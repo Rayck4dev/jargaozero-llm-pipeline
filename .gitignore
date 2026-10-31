@@ -16,6 +16,8 @@ models/*.pth
 models/*.bin
 results_jargaozero.jsonl
 training_dataset.jsonl
+data/candidates/
+data/rebuilt/*.tmp
 
 # IDE
 .vscode/

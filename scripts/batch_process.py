@@ -1,51 +1,44 @@
 import json
 import time
-import requests
+import sys
+from pathlib import Path
 
-LOCAL_API_URL = "http://localhost:1235/v1/chat/completions"
-MODELO_NOME = "dolphin-2.9-llama3-8b" 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lm_studio_client import LMStudioClient
+
+CLIENT = LMStudioClient()
 
 PROMPT_SISTEMA = (
     "Atue exclusivamente como o tradutor do projeto JargãoZero. Siga"
     " exatamente o formato de resposta solicitado, sem incluir tags,"
-    " metadados ou explicações adicionais."
+    " metadados ou explicações adicionais. Preserve os fatos e adapte"
+    " a linguagem ao nível solicitado."
 )
 
-EXEMPLO_FEW_SHOT = {
-    "role": "user",
-    "content": (
-        "Entrada: Nível: Leigo. Texto: A latência de rede refere-se ao atraso"
-        " temporal na propagação de pacotes de dados através de um meio de"
-        " comunicação.\nSaída: É o tempo de espera ou o atraso que acontece"
-        " desde o momento em que clica em algo na internet até a página"
-        " realmente carregar no ecrã."
-    ),
-}
+EXEMPLO_USER = (
+    "Nível: Leigo. Texto: A latência de rede é o atraso na transmissão "
+    "de dados entre dispositivos."
+)
+EXEMPLO_ASSISTANT = (
+    "É o tempo que os dados levam para chegar de um dispositivo a outro."
+)
 
 def traduzir_amostra(texto_tecnico, nivel="Leigo"):
-    payload = {
-        "model": MODELO_NOME,
-        "messages": [
+    return CLIENT.chat_completion(
+        [
             {"role": "system", "content": PROMPT_SISTEMA},
-            EXEMPLO_FEW_SHOT,
+            {"role": "user", "content": EXEMPLO_USER},
+            {"role": "assistant", "content": EXEMPLO_ASSISTANT},
             {
                 "role": "user",
                 "content": (
-                    f"Entrada: Nível: {nivel}. Texto: {texto_tecnico}\nSaída:"
+                    f"Nível: {nivel}. Texto: {texto_tecnico}\nSaída:"
                 ),
             },
         ],
-        "temperature": 0.3,
-        "max_tokens": 250,
-    }
-
-    try:
-        response = requests.post(LOCAL_API_URL, json=payload)
-        response.raise_for_status()
-        resultado = response.json()
-        return resultado["choices"][0]["message"]["content"].strip()
-    except Exception as e:
-        return f"ERRO: {e}"
+        temperature=0.3,
+        max_tokens=250,
+    )
 
 def processar_dataset(
     ficheiro_entrada="train.jsonl", ficheiro_saida="results_jargaozero.jsonl"
@@ -72,13 +65,9 @@ def processar_dataset(
                 texto_tecnico = user_msg
                 
                 if "Nível:" in user_msg and "Texto:" in user_msg:
-                    try:
-                        partes = user_msg.split("Texto:")
-                        nivel_parte = partes[0].replace("Nível:", "").strip().replace(".", "")
-                        nivel = nivel_parte if nivel_parte else "Leigo"
-                        texto_tecnico = partes[1].strip()
-                    except Exception:
-                        pass
+                    nivel_parte, texto_parte = user_msg.split("Texto:", 1)
+                    nivel = nivel_parte.split("Nível:", 1)[1].strip().rstrip(".")
+                    texto_tecnico = texto_parte.strip()
             else:
                 texto_tecnico = dados.get("texto", dados.get("input", dados.get("original", "")))
                 nivel = dados.get("nivel", "Leigo")
