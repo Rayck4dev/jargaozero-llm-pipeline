@@ -20,6 +20,7 @@
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
   <a href="https://colab.research.google.com/github/Rayck4dev/jargaozero-llm-pipeline/blob/main/notebook/Jarg%C3%A3oZero_LLM.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir no Google Colab" /></a>
   <img src="https://img.shields.io/badge/Licença-MIT-yellow.svg?style=for-the-badge" alt="Licença MIT" />
+  <a href="https://hub.xerj.org/contributors/Rayck4dev"><img src="https://hub.xerj.org/contributors/Rayck4dev/badge.svg" alt="XERJ Corpus Hub contributor" /></a>
 </p>
 
 ---
